@@ -156,7 +156,7 @@ body, #root, .app {
 
 .pos {
   position: absolute;
-  right: 0;
+  right:0;
   top: 80px !important;
 }
 @media screen and (max-width:768px) {

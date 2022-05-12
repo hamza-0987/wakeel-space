@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import axios from 'axios';
 import './AssignmentAdmin.css'
-import Header from '../partials/Header/Header';
-import MobileHeader from '../partials/Header/MobileHeader'
-import FooterNav from '../partials/FooterNav/FooterNav'
+import Header from '../../partials/Header/Header';
+import MobileHeader from '../../partials/Header/MobileHeader'
+import FooterNav from '../../partials/FooterNav/FooterNav'
 import { useParams } from 'react-router-dom';
 
 import Pagination from './Pagination';
 import Posts from './Posts';
 import { useSelector } from 'react-redux';
-import { selectUserData } from '../../reduxSlices/authSlice';
+import { selectUserData } from '../../../reduxSlices/authSlice';
 
 const AssignmentAdmin = () => {
     const [posts, setPosts] = useState([]);

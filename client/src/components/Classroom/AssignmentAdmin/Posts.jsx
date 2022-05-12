@@ -1,10 +1,10 @@
 import React,{useState} from 'react';
-import { getDateFromTimestamp, getTimeFromTimestamp } from '../../utilities';
+import { getDateFromTimestamp, getTimeFromTimestamp } from '../../../utilities';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import axios from 'axios';
-import { selectUserData } from '../../reduxSlices/authSlice';
+import { selectUserData } from '../../../reduxSlices/authSlice';
 import { useSelector } from 'react-redux';
 
 const Posts = ({fetchPosts, posts, loading, paginate, assignmentName, dueDate}) => {

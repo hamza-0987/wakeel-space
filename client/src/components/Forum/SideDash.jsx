@@ -3,8 +3,8 @@ import "./Dashboard.css";
 import {Link} from 'react-router-dom';
 import Avatar from '@material-ui/core/Avatar';
 import AddIcon from '@material-ui/icons/Add';
-import CreateClassroom from '../Classroom/CreateClassroom'; 
-import JoinClassroom from '../Classroom/JoinClassroom';
+import CreateCourse from './CreateCourse'; 
+import JoinCourse from './CreateCourse';
 const SideDash = (props) => {
   const [show, setShow] = useState(false);
   const [showJoin, setShowJoin] = useState(false);
@@ -59,7 +59,7 @@ const SideDash = (props) => {
               }
             </>
           ) : (
-            <div className="ms-2 text-muted mb-3">You haven't uploaded anything.</div>
+            <div className="ms-2 text-muted mb-3">You haven't created any courses.</div>
           )
         }
       </div>
@@ -107,7 +107,7 @@ const SideDash = (props) => {
               }
             </>
           ) : (
-            <div className="ms-2 text-muted mb-3">You haven't accessed any material.</div>
+            <div className="ms-2 text-muted mb-3">You haven't enrolled in any courses.</div>
           )
         }
       </div>
@@ -115,18 +115,18 @@ const SideDash = (props) => {
         {/* <div className="col-12 d-flex justify-content-center pb-3">
           <button className="join-create-btn" onClick={() => setShowJoin(true)}>
             <AddIcon className="pe-1 mb-1"></AddIcon>
-            
+            Join Courses
           </button>
         </div> */}
         <div className="col-12 d-flex justify-content-center pb-3">
           <button className="join-create-btn" onClick={() => setShow(true)}>
           <AddIcon className="pe-1 mb-1"></AddIcon>
-            Upload
+            Create Course
           </button>
         </div>
       </div>
-      <CreateClassroom isModalOpen={show} toggleModal={toggle} setShow={setShow}/>
-      <JoinClassroom isModalOpen={showJoin} toggleModal={toggleJoin} setShow={setShowJoin}/>
+      <CreateCourse isModalOpen={show} toggleModal={toggle} setShow={setShow}/>
+      <JoinCourse isModalOpen={showJoin} toggleModal={toggleJoin} setShow={setShowJoin}/>
     </div>
   );
 }

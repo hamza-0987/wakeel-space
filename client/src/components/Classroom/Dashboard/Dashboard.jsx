@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../partials/Header/Header';
-import MobileHeader from '../partials/Header/MobileHeader';
-import FooterNav from '../partials/FooterNav/FooterNav';
+import Header from '../../partials/Header/Header';
+import MobileHeader from '../../partials/Header/MobileHeader';
+import FooterNav from '../../partials/FooterNav/FooterNav';
 import "./Dashboard.css";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import SideDash from './SideDash';
@@ -9,12 +9,12 @@ import Banner from './Banner';
 import ClassList from './ClassList';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import { selectUserData} from '../../reduxSlices/authSlice';
+import { selectUserData} from '../../../reduxSlices/authSlice';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
-import CreateClassroom from '../Classroom/CreateClassroom'; 
-import JoinClassroom from '../Classroom/JoinClassroom';
+import CreateClassroom from '../CreateClassroom'; 
+import JoinClassroom from '../JoinClassroom';
 
 const Dashboard = () => {
   const [owned, setOwned] = useState([]);

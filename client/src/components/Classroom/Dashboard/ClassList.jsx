@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import {useHistory} from 'react-router-dom';
 import "./Dashboard.css";
-import Card1 from "../../assets/card1.svg";
-import Card2 from "../../assets/card2.svg";
-import Card3 from "../../assets/card3.svg";
-import Card4 from "../../assets/card4.svg";
-import Card5 from "../../assets/card5.svg";
+import Card1 from "../../../assets/card1.svg";
+import Card2 from "../../../assets/card2.svg";
+import Card3 from "../../../assets/card3.svg";
+import Card4 from "../../../assets/card4.svg";
+import Card5 from "../../../assets/card5.svg";
 import {Link} from 'react-router-dom';
 const ClassList = (props) => {
   const [show, setShow] = useState(false);
@@ -18,7 +18,7 @@ const ClassList = (props) => {
     
     return (  
       ((owned.concat(enrolled)).length == 0 ) ? (
-        <div className="text-muted text-center">You haven't created or joined any courses.</div>
+        <div className="text-muted text-center">You haven't created or joined any class.</div>
       ) : 
       (owned.concat(enrolled)).map((sub,index) => {
         let backgroundStyle ={};
@@ -132,7 +132,7 @@ const ClassList = (props) => {
       <div className="col-12">
         <div className="row my-3 ms-0 content-box d-none d-md-block pb-4">
           <div className="col-12 heading-2 d-flex py-3 pb-4 justify-content-center">
-            Courses 
+            Classes 
           </div>
           <div className="col-12">
             <div className="row g-md-4 gy-md-5 px-md-3">

@@ -1,18 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom';
 import './StudentSubmission.css';
-import Header from '../partials/Header/Header';
-import MobileHeader from '../partials/Header/MobileHeader';
-import FooterNav from '../partials/FooterNav/FooterNav';
+import Header from '../../partials/Header/Header';
+import MobileHeader from '../../partials/Header/MobileHeader';
+import FooterNav from '../../partials/FooterNav/FooterNav';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import { getDateFromTimestamp, getTimeFromTimestamp } from '../../utilities';
+import { getDateFromTimestamp, getTimeFromTimestamp } from '../../../utilities';
 
-import { storage } from '../../firebase';
+import { storage } from '../../../firebase';
 import axios from 'axios';
 
 import { useSelector } from 'react-redux';
-import { selectUserData } from '../../reduxSlices/authSlice';
+import { selectUserData } from '../../../reduxSlices/authSlice';
 
 const StudentSubmission = () => {
     const fileInput = useRef(null);

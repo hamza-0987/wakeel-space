@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import "./Dashboard.css";
 
-import banner from "../../assets/banner-image2.png";
+import banner from "../../../assets/banner-image2.png";
 import { useSelector } from 'react-redux';
-import { selectUserData} from '../../reduxSlices/authSlice';
+import { selectUserData} from '../../../reduxSlices/authSlice';
 
 const Banner = () => {
   const storeData = useSelector(selectUserData);

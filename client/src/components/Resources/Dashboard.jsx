@@ -31,7 +31,7 @@ const Dashboard = () => {
     if (storeData.token){
       setLoading(true);
       console.log(storeData);
-      await axios.post("http://localhost:5000/classes/getClassrooms", {
+      await axios.post("http://localhost:5000/resources/getResources", {
         userEmail: storeData.userEmail,
         type:"owned"
       },{ headers: { Authorization: 'Bearer ' + storeData.token } }
@@ -41,7 +41,7 @@ const Dashboard = () => {
         setOwned(res.data);
       })
       .catch(err => console.log(err));
-      await axios.post("http://localhost:5000/classes/getClassrooms", {
+      await axios.post("http://localhost:5000/resources/getResources", {
         userEmail: storeData.userEmail,
         type:"enrolled"
       },{ headers: { Authorization: 'Bearer ' + storeData.token } }
@@ -94,15 +94,15 @@ const Dashboard = () => {
                   <DropdownItem>
                     <button className="join-create-btn" onClick={() => setShow(true)}>
                       <AddIcon className="pe-1 mb-1"></AddIcon>
-                      Create Class
+                      Upload
                     </button>
                   </DropdownItem>
-                  <DropdownItem>
+                  {/* <DropdownItem>
                     <button className="join-create-btn" onClick={() => setShowJoin(true)}>
                       <AddIcon className="pe-1 mb-1"></AddIcon>
                       Join Class
                     </button>
-                  </DropdownItem>
+                  </DropdownItem> */}
                 </DropdownMenu>
               </Dropdown>
             </div>

@@ -4,17 +4,13 @@ import MobileHeader from '../partials/Header/MobileHeader';
 import FooterNav from '../partials/FooterNav/FooterNav';
 import "./Dashboard.css";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import SideDash from './SideDash';
 import Banner from './Banner';
-import ClassList from './ClassList';
+import FAQ from './FAQ';
+import Forum from './Discussion';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { selectUserData} from '../../reduxSlices/authSlice';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import AddIcon from '@material-ui/icons/Add';
-import Fab from '@material-ui/core/Fab';
-import CreateClassroom from '../Classroom/CreateClassroom'; 
-import JoinClassroom from '../Classroom/JoinClassroom';
+
 
 const Dashboard = () => {
   const [owned, setOwned] = useState([]);
@@ -70,44 +66,19 @@ const Dashboard = () => {
               <MobileHeader/>
             </div>
             <div className="row mx-0">
-                <SideDash setLoading={setLoading} owned={owned} enrolled={enrolled} />
+                <FAQ setLoading={setLoading} owned={owned} enrolled={enrolled} />
               <div className="col-12 col-md-9 width-80 padding-sx-0 margin-sx-0 pos">
                 <div className="row mx-0 m-t-0 m-md-3">
                   <Banner/>
                 </div>
                 <div className="row m-3 mx-0 mx-md-3">
-                  <ClassList setLoading={setLoading} owned={owned} enrolled={enrolled} />
+                  <Forum setLoading={setLoading} owned={owned} enrolled={enrolled} />
                 </div>
               </div>
             </div>
             <div className="d-block d-md-none">
               <FooterNav/>
             </div>
-            <div className="floating-btn d-block d-md-none">
-              <Dropdown direction="up" isOpen={dropdownOpen} toggle={toggleDropdown}>
-                <DropdownToggle nav>
-                  <Fab style={{color:'white', backgroundColor:"#1B559C" }}>
-                    <AddIcon style={{}} />  
-                  </Fab>
-                </DropdownToggle>
-                <DropdownMenu className="bg-transparent" style={{border:"none"}}>
-                  <DropdownItem>
-                    <button className="join-create-btn" onClick={() => setShow(true)}>
-                      <AddIcon className="pe-1 mb-1"></AddIcon>
-                      Create Class
-                    </button>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <button className="join-create-btn" onClick={() => setShowJoin(true)}>
-                      <AddIcon className="pe-1 mb-1"></AddIcon>
-                      Join Class
-                    </button>
-                  </DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-            </div>
-            <CreateClassroom isModalOpen={show} toggleModal={toggle} setShow={setShow}/>
-            <JoinClassroom isModalOpen={showJoin} toggleModal={toggleJoin} setShow={setShowJoin}/>
           </div>
         ) 
       }

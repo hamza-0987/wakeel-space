@@ -3,13 +3,13 @@ import './App.css';
 import React, {useEffect} from 'react';
 import Home from './components/Home/Home';
 import Courses from './components/Courses/Dashboard'
-import Resourses from './components/Resources/Dashboard'
-import Discussion from './components/Forum/Dashboard'
-import Dashboard from './components/Dashboard/Dashboard';
+import Resources from './components/Resources/Dashboard'
+import Forum from './components/Forum/Dashboard'
+import Dashboard from './components/Classroom/Dashboard/Dashboard';
 import Classroom from './components/Classroom/Classroom';
 import ScrollToTop from './components/partials/ScrollToTop/ScrollToTop';
-import AssignmentAdmin from './components/AssignmentAdmin/AssignmentAdmin';
-import StudentSubmission from './components/StudentSubmission/StudentSubmission';
+import AssignmentAdmin from './components/Classroom/AssignmentAdmin/AssignmentAdmin';
+import StudentSubmission from './components/Classroom/StudentSubmission/StudentSubmission';
 import { useDispatch, useSelector } from 'react-redux';
 import { AUTOLOGIN, selectUserData } from './reduxSlices/authSlice';
 import Reminders from './components/partials/Header/MobileReminder'
@@ -36,8 +36,8 @@ const App = () => {
               <Switch>
                 <Route path='/' component={Home} exact/>
                 <Route path='/courses' component={Courses} exact/>
-                <Route path='/resources' component={Courses} exact/>
-                <Route path='/forum' component={Courses} exact/>
+                <Route path='/resources' component={Resources} exact/>
+                <Route path='/forum' component={Forum} exact/>
                 <Route path='/classes' component={Dashboard} exact/>
                 <Route path='/classes/reminders' component={Reminders}/>
                 <Route path='/classes/:id' component={Classroom} exact/>
