@@ -13,7 +13,7 @@ import { Button} from 'reactstrap';
 import CreateAssignment from "./CreateAssignment";
 import { useSelector } from 'react-redux';
 import axios from 'axios';
-import { selectUserData} from '../../reduxSlices/authSlice';
+import { selectUserData, SET_ERROR_NULL} from '../../reduxSlices/authSlice';
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { Dropdown, DropdownToggle, DropdownMenu } from 'reactstrap';
  
@@ -190,15 +190,13 @@ const Course = () => {
               <div className="row justify-content-between mt-3">
                 <div className="Classroom_Body m-0 p-0">
                   {
-                    activeTab === "discussion" ? <Discussion adminEmail={adminEmail} classCode={classCode} /> : 
                     activeTab === "assignments" ? (
                     <Assignments 
                       setIsAssignmentCreated={setIsAssignmentCreated} 
                       isAssignmentCreated={isAssignmentCreated} 
                       classCode={classCode} 
                       adminEmail={adminEmail}
-                      /> ) : 
-                    activeTab === "attendees" ? <Attendees classCode={classCode} adminName={adminName} adminEmail={adminEmail} /> : null 
+                      /> ):null
                   }
                   
                 </div>
