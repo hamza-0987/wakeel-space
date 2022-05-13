@@ -5,6 +5,7 @@ import MobileHeader from "../partials/Header/MobileHeader";
 import Header from "../partials/Header/Header";
 import FooterNav from "../partials/FooterNav/FooterNav";
 import { getDateFromTimestamp, getTimeFromTimestamp } from "../../utilities";
+import Content from "./Content"; 
 import Assignments from './Assignments';
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import VideocamIcon from "@material-ui/icons/Videocam";
@@ -39,8 +40,8 @@ const Course = () => {
   const [reminderLoading, setReminderLoading] = useState(false);
   
   useEffect(() => {
-    if (!activeTab) setActiveTab("discussion");
-    if (activeTab === "discussion") {
+    if (!activeTab) setActiveTab("content");
+    if (activeTab === "content") {
       history.replace('/courses/' + classCode);
     } else if (activeTab === "assignments") {
       history.replace('/courses/' + classCode + '/assignments');
@@ -157,10 +158,7 @@ const Course = () => {
                     </Dropdown>
                   ): ""
                 }
-                <a href={meetLink} target="_blank">  
-                  <VideocamIcon
-                  style={{ fontSize: 38, marginLeft: "10px", color: "gray" }}
-                  />
+                <a href={meetLink} target="_blank">
                 </a>
               </div>
             </div>
@@ -179,17 +177,19 @@ const Course = () => {
                   >
                     Assignments
                   </div>
-                  <div
+                  {/* <div
                     onClick={() => setActiveTab("attendees")}
                     className={activeTab === "attendees" ? "active" : ""}
                   >
                     Attendees
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="row justify-content-between mt-3">
                 <div className="Classroom_Body m-0 p-0">
                   {
+                    activeTab === "content" ? 
+                    <Content adminEmail={adminEmail} classCode={classCode} /> : 
                     activeTab === "assignments" ? (
                     <Assignments 
                       setIsAssignmentCreated={setIsAssignmentCreated} 
