@@ -83,7 +83,6 @@ const CreateCourse = (props) => {
             adminEmail: storeData.userEmail,
             desc: values.description,
             className: values.className,
-            section: values.section,
             fieldName: values.fieldName,
             classLevel: values.classLevel
         },{ headers: { Authorization: 'Bearer ' + storeData.token } }
@@ -200,7 +199,7 @@ const CreateCourse = (props) => {
                                     }
                                 />
                             </FormControl>
-                            <FormControl className={clsx(classes.margin, classes.textField)}>
+                            {/* <FormControl className={clsx(classes.margin, classes.textField)}>
                                 <InputLabel htmlFor="section"></InputLabel>
                                 <Input
                                     style={{marginBottom:"10px"}}
@@ -218,7 +217,7 @@ const CreateCourse = (props) => {
                                         </InputAdornment>
                                     }
                                 />
-                            </FormControl>
+                            </FormControl> */}
 
 {/* 
                             <FormControl className={clsx(classes.margin, classes.textField)}>

@@ -75,7 +75,7 @@ const JoinClassroom = (props) => {
         }
         else{
             setLoading(true);
-            axios.post("http://localhost:5000/classes/joinClassroom", {
+            axios.post("http://localhost:5000/courses/joinCourse", {
                 userEmail: storeData.userEmail,
                 classCode: classCode
             },{ headers: { Authorization: 'Bearer ' + storeData.token } }

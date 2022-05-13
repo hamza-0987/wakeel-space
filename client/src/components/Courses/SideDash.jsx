@@ -14,6 +14,8 @@ const SideDash = (props) => {
   const enrolled = props.enrolled;
   const [seeAllOwned , setSeeAllOwned] = useState(false);
   const [seeAllEnrolled , setSeeAllEnrolled] = useState(false);
+
+  // side bar in the courses file .
   return (
     <div className="col-3 d-none d-md-block Dashboard_Sidedrawer px-1 ps-4 width-20">
       <div className="owned">
@@ -24,7 +26,7 @@ const SideDash = (props) => {
               {
                 owned.slice(0,(seeAllOwned)?owned.length:Math.min(2,owned.length)).map((sub,index) => {
                   return (
-                    <Link key={index} to={"/classes/"+sub.classCode}> 
+                    <Link key={index} to={"/courses/"+sub.classCode}> 
                       <div className="Sidedrawer_Class active d-flex p-2 ps-2">
                         <div>
                           <div className="class-avatar">
@@ -72,7 +74,7 @@ const SideDash = (props) => {
               {
                 enrolled.slice(0,(seeAllEnrolled)?enrolled.length:Math.min(2,enrolled.length)).map((sub,index) => {
                   return (
-                    <Link key={index} to={"/classes/"+sub.classCode}> 
+                    <Link key={index} to={"/courses/"+sub.classCode}> 
                       <div className="Sidedrawer_Class active d-flex p-2 ps-2">
                         <div>
                         <div className="class-avatar">

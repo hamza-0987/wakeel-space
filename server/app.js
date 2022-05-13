@@ -10,9 +10,12 @@ app.use(cors());
 
 const authRoutes = require('./routes/auth');
 const classroomRoutes = require('./routes/classroom');
+const courseRoutes = require('./routes/course');
+
 
 app.use('/auth', authRoutes);
 app.use('/classes', classroomRoutes);
+app.use('/courses', courseRoutes);
 
 // if ( process.env.NODE_ENV === "production" || 1) { 
 //     app.use(express.static(path.join(__dirname, "../client/build"))); 

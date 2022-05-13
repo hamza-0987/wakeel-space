@@ -22,10 +22,6 @@ const courseSchema = new Schema({
             type: String,
             required: true
         },
-        meetLink: {
-            type: String,
-            required: true
-        },
         fieldName: {
             type: String,
             required: true

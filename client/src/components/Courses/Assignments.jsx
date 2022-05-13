@@ -20,7 +20,7 @@ const Assignments = ({classCode, adminEmail, isAssignmentCreated, setIsAssignmen
 
     const getAssignments = () => {
         setLoading(true);
-        axios.post("http://localhost:5000/classes/getAssignments", {
+        axios.post("http://localhost:5000/courses/getAssignments", {
             classCode: classCode
         },{ headers: { Authorization: 'Bearer ' + storeData.token } }
         )
