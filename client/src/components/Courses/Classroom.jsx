@@ -43,11 +43,11 @@ const Course = () => {
   useEffect(() => {
     if (!activeTab) setActiveTab("discussion");
     if (activeTab === "discussion") {
-      history.replace('/courses');
+      history.replace('/courses/' + classCode);
     } else if (activeTab === "assignments") {
-      history.replace('/courses' + '/assignments');
+      history.replace('/courses/' + classCode + '/assignments');
     } else if (activeTab === "attendees") {
-      history.replace('/courses' + '/attendees');
+      history.replace('/courses/'  + classCode + '/attendees');
     }
   }, [activeTab])
   const toggle_dropdown = () => setDropdownOpen(prevState => !prevState);

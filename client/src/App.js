@@ -2,7 +2,8 @@ import {BrowserRouter as Router, Route,Switch, Redirect} from 'react-router-dom'
 import './App.css';
 import React, {useEffect} from 'react';
 import Home from './components/Home/Home';
-import Courses from './components/Courses/Dashboard'
+import Courses from './components/Courses/Dashboard';
+import Courseroom from './components/Courses/Classroom';
 import Resources from './components/Resources/Dashboard'
 import Forum from './components/Forum/Dashboard'
 import Dashboard from './components/Classroom/Dashboard/Dashboard';
@@ -36,6 +37,7 @@ const App = () => {
               <Switch>
                 <Route path='/' component={Home} exact/>
                 <Route path='/courses' component={Courses} exact/>
+                <Route path='/courses/:id' component={Courseroom} exact/>
                 <Route path='/resources' component={Resources} exact/>
                 <Route path='/forum' component={Forum} exact/>
                 <Route path='/classes' component={Dashboard} exact/>
