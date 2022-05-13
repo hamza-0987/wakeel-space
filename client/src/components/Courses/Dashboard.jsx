@@ -14,7 +14,6 @@ import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap
 import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
 import CreateCourse from "./CreateCourse";
-import JoinCourse from "./JoinCourse";
 
 const Dashboard = () => {
   const [owned, setOwned] = useState([]);
@@ -107,7 +106,6 @@ const Dashboard = () => {
               </Dropdown>
             </div>
             <CreateCourse isModalOpen={show} toggleModal={toggle} setShow={setShow}/>
-            <JoinCourse isModalOpen={showJoin} toggleModal={toggleJoin} setShow={setShowJoin}/>
           </div>
         ) 
       }
