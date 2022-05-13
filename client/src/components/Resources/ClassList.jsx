@@ -12,13 +12,13 @@ const ClassList = (props) => {
   const toggle = () => setShow(prevState=>!prevState);
   const [activeTab, setActiveTab] = useState("1");
   const history = useHistory();
-  const owned = props.owned;
+  const owned = [];
   const enrolled = props.enrolled;
   const RenderClasses = () => {
     
     return (  
       ((owned.concat(enrolled)).length == 0 ) ? (
-        <div className="text-muted text-center">You haven't uploaded or accessed any resources.</div>
+        <div className="text-muted text-center">No resources available !!</div>
       ) : 
       (owned.concat(enrolled)).map((sub,index) => {
         let backgroundStyle ={};
@@ -52,14 +52,14 @@ const ClassList = (props) => {
         // console.log(history);
         return (
           <div key={index} className="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-            <Link to={"/classes/"+sub.classCode} style={{maxWidth:"100%",minWidth:"100%"}}>
+            <Link to={"/resources"} style={{maxWidth:"100%",minWidth:"100%"}}>
               <div className="d-none d-md-flex card class-card card-width mx-auto" style={backgroundStyle}>
                 <img src={card} className="mx-auto mt-3" height="130px"/>
                 <div className="card-body m-3 mx-md-4 rounded-3" style={{backgroundColor:"#fff"}}>
                   <h5 className="card-title heading-3 text-start mb-0">{sub.className}</h5>
-                  <p className="card-text text-dark mb-1"><span className="text-muted" style={{fontSize:"16px"}}>{sub.adminName}</span></p>
+                  <p className="card-text text-dark mb-1"><span className="text-muted" style={{fontSize:"16px"}}>{sub.fieldName}</span></p>
                   <p className="card-text text-dark mb-1" style={{fontSize:"14px"}}>{sub.desc}</p>
-                  <a href={sub.meetLink} target="_blank" className="card-link text-primary">{sub.meetLink}</a>
+                  <a href={sub.filelink} target="_blank" className="card-link text-primary">{sub.fileLink}</a>
                 </div>
               </div>
             </Link>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./Dashboard.css";
 import AddIcon from '@material-ui/icons/Add';
+import CreateResource from './CreateResource';
 const SideDash = (props) => {
   const [show, setShow] = useState(false);
   const [showJoin, setShowJoin] = useState(false);
@@ -28,6 +29,7 @@ const SideDash = (props) => {
           </button>
         </div>
       </div>
+      <CreateResource isModalOpen={show} toggleModal={toggle} setShow={setShow}/>
     </div>
   );
 }

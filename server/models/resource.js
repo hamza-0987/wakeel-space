@@ -10,16 +10,12 @@ const assignmentSchema = new Schema({
             type: String,
             required: true
         },
-        dueDate: {
-            type: Date,
+        fieldName: {
+            type: String,
             required: true
         },
         fileLink: {
             type: String,
-            required: true
-        },
-        classCode: {
-            type: Number,
             required: true
         },
         creatorEmail: {
@@ -32,4 +28,4 @@ const assignmentSchema = new Schema({
     }
 )
 
-module.exports = mongoose.model('Resource', assignmentSchema);
+module.exports = mongoose.model('Resources', assignmentSchema);
