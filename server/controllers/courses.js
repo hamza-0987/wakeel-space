@@ -52,9 +52,9 @@ exports.getCourses = (req, res, next) => {
                 next(err);
             })
     } else if (type === "enrolled") {
-        User.findOne({email: userEmail})
+        User.findOne()
             .then(user => {
-                Classroom.find({classCode: user.classesEnrolled})
+                Classroom.find()
                     .then(results => {
                         res.json(results);
                     })

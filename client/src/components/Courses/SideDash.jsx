@@ -65,54 +65,6 @@ const SideDash = (props) => {
           )
         }
       </div>
-
-      <div className="enrolled">
-        <h6 className="ms-2 mt-3 fw-bold">Enrolled</h6>
-        {
-          (enrolled.length !=0) ? (
-            <>
-              {
-                enrolled.slice(0,(seeAllEnrolled)?enrolled.length:Math.min(2,enrolled.length)).map((sub,index) => {
-                  return (
-                    <Link key={index} to={"/courses/"+sub.classCode}> 
-                      <div className="Sidedrawer_Class active d-flex p-2 ps-2">
-                        <div>
-                        <div className="class-avatar">
-                            <Avatar>{sub.adminName.slice(0,1).toUpperCase()}</Avatar>
-                          </div>
-                        </div>
-                        <div className="ms-2 d-flex flex-column">
-                          <div className="Class_Title">{sub.className}</div>
-                          <div className="Class_Desc">{sub.classLevel}</div>
-                        </div>
-                      </div>
-                    </Link>
-                  );
-                  })
-              }
-              {
-                enrolled.length > 2 ? (
-                  <div className="See_All d-flex justify-content-end pt-2">
-                    {
-                      seeAllEnrolled ? (
-                        <div onClick={() => setSeeAllEnrolled(false)}>
-                          See Less
-                        </div>
-                      ) : (
-                        <div onClick={() => {setSeeAllOwned(false); setSeeAllEnrolled(true);}}>
-                          See All
-                        </div>
-                      )
-                    }
-                  </div>
-                ) : null
-              }
-            </>
-          ) : (
-            <div className="ms-2 text-muted mb-3">You haven't enrolled in any courses.</div>
-          )
-        }
-      </div>
       <div className="row join-links pt-3">
         {/* <div className="col-12 d-flex justify-content-center pb-3">
           <button className="join-create-btn" onClick={() => setShowJoin(true)}>

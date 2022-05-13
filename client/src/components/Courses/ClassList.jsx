@@ -12,7 +12,7 @@ const ClassList = (props) => {
   const toggle = () => setShow(prevState=>!prevState);
   const [activeTab, setActiveTab] = useState("1");
   const history = useHistory();
-  const owned = props.owned;
+  const owned = [];
   const enrolled = props.enrolled;
 
   // courses display part
