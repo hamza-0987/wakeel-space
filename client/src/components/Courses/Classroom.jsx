@@ -168,10 +168,10 @@ const Course = () => {
               <div className="row d-flex">
                 <div className="d-flex justify-content-between Classroom_Navtab mt-3">
                   <div
-                    onClick={() => setActiveTab("discussion")}
-                    className={activeTab === "discussion" ? "active" : ""}
+                    onClick={() => setActiveTab("content")}
+                    className={activeTab === "content" ? "active" : ""}
                   >
-                    Discussion
+                    Course Content
                   </div>
                   <div
                     onClick={() => setActiveTab("assignments")}
