@@ -1,12 +1,12 @@
 import firebase from 'firebase';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD_hH4UrDf4943HCXBBXxIr04F7HCTw9Tk",
-    authDomain: "learnerspace-6a731.firebaseapp.com",
-    projectId: "learnerspace-6a731",
-    storageBucket: "learnerspace-6a731.appspot.com",
-    messagingSenderId: "614755977474",
-    appId: "1:614755977474:web:48987dc24e9d74d7e5da1b"
+    apiKey: "AIzaSyDV7zPRR4m5uqIkLQOuPfZswqRfxFFTvrM",
+    authDomain: "learnerspace-1eac8.firebaseapp.com",
+    projectId: "learnerspace-1eac8",
+    storageBucket: "learnerspace-1eac8.appspot.com",
+    messagingSenderId: "352733195928",
+    appId: "1:352733195928:web:aea7469615784e49672aed"
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
