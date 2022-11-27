@@ -13,6 +13,7 @@ const classroomRoutes = require('./routes/classroom');
 const courseRoutes = require('./routes/course');
 const resourceRoutes = require('./routes/resource');
 const forumRoutes = require('./routes/forum');
+const browseRoutes = require('./routes/browse');
 
 
 app.use('/auth', authRoutes);
@@ -20,6 +21,7 @@ app.use('/classes', classroomRoutes);
 app.use('/courses', courseRoutes);
 app.use('/resources', resourceRoutes);
 app.use('/forum', forumRoutes);
+app.use('/browse', browseRoutes);
 
 // if ( process.env.NODE_ENV === "production" || 1) { 
 //     app.use(express.static(path.join(__dirname, "../client/build"))); 
