@@ -13,6 +13,7 @@
     "nodemon": "^2.0.13"
   },
   "scripts": {
-    "start": "nodemon server/app.js"
+    "start": "nodemon server/app.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
   }
 }
