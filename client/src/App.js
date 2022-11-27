@@ -58,6 +58,7 @@ const App = () => {
             ) : (
               <Switch>
                 <Route path='/' component={Home} exact/>
+                <Route path='/browse' component={Browse} exact/>
                 <Redirect to ="/" />
               </Switch>
             )
