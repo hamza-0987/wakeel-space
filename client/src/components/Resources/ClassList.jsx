@@ -51,8 +51,8 @@ const ClassList = (props) => {
         }
         // console.log(history);
         return (
+          <a href={sub.fileLink} target="_blank" >
           <div key={index} className="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-            <Link to={"/resources"} style={{maxWidth:"100%",minWidth:"100%"}}>
               <div className="d-none d-md-flex card class-card card-width mx-auto" style={backgroundStyle}>
                 <img src={card} className="mx-auto mt-3" height="130px"/>
                 <div  className="card-body m-3 mx-md-4 rounded-3" style={{backgroundColor:"#fff"}}>
@@ -62,8 +62,8 @@ const ClassList = (props) => {
                   <a href={sub.filelink} target="_blank" rel="noopener noreferrer" className="card-link text-primary">{sub.fileLink}</a>
                </div>
                </div>
-            </Link>
           </div>
+          </a>
         );
       })
     );
