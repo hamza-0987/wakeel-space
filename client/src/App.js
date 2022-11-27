@@ -6,6 +6,7 @@ import Browse from './components/Browse/browse';
 import Courses from './components/Courses/Dashboard';
 import Courseroom from './components/Courses/Classroom';
 import CourseAssign from './components/Courses/Assignments'
+import Content from './components/Courses/Contents'
 import Resources from './components/Resources/Dashboard'
 import Forum from './components/Forum/Dashboard'
 import Dashboard from './components/Classroom/Dashboard/Dashboard';
@@ -43,6 +44,7 @@ const App = () => {
                 <Route path='/courses/:id' component={Courseroom} exact/>
                 <Route path='/courses/:id/:tab' component={Courseroom} exact/>
                 <Route path='/courses/:id/assignment/:assignId/admin' component={CourseAssign} exact/>
+                <Route path='/courses/:id/content/:contentId/admin' component={Content} exact/>
                 <Route path='/resources' component={Resources} exact/>
                 <Route path='/forum' component={Forum} exact/>
                 <Route path='/classes' component={Dashboard} exact/>

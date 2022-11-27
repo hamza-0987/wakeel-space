@@ -176,7 +176,9 @@ const Discussion = () => {
                                                     {post.creatorName[0]}
                                                 </Avatar>
                                             </div>
-
+                                            <div className="Post_Author d-flex flex-column justify-content-center mx-3">
+                                            <div className="Post_creatorName">{post.creatorName}</div>
+                                            </div>
                                             <div className="d-flex flex-column align-items-end">
                                                 <div className="Post_UploadDate">
                                                     {getDateStringFromTimestamp(post.createdAt)}

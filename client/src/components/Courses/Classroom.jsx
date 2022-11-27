@@ -5,13 +5,14 @@ import MobileHeader from "../partials/Header/MobileHeader";
 import Header from "../partials/Header/Header";
 import FooterNav from "../partials/FooterNav/FooterNav";
 import { getDateFromTimestamp, getTimeFromTimestamp } from "../../utilities";
-import Content from "./Content"; 
+import Content from "./CreateContent"; 
 import Assignments from './Assignments';
+import Contents from './Contents';
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import VideocamIcon from "@material-ui/icons/Videocam";
 import AddRoundedIcon from '@material-ui/icons/AddRounded';
 import { Button} from 'reactstrap';
 import CreateAssignment from "./CreateAssignment";
+import CreateContent from "./CreateContent";
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { selectUserData, SET_ERROR_NULL} from '../../reduxSlices/authSlice';
@@ -35,19 +36,22 @@ const Course = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [show, setShow] = useState(false);
   const toggle = () => setShow(prevState=>!prevState);
+
+  const [showContent, setShowContent] = useState(false);
+  const toggleContent = () => setShowContent(prevState=>!prevState);
+
   const [loading, setLoading] = useState(false);
   const [isAssignmentCreated, setIsAssignmentCreated] = useState(false);
+  const [isContentCreated, setIsContentCreated] = useState(false);
   const [reminderLoading, setReminderLoading] = useState(false);
   
   useEffect(() => {
     if (!activeTab) setActiveTab("content");
     if (activeTab === "content") {
-      history.replace('/courses/' + classCode);
+      history.replace('/courses/' + classCode+ '/contents');
     } else if (activeTab === "assignments") {
       history.replace('/courses/' + classCode + '/assignments');
-    } else if (activeTab === "attendees") {
-      history.replace('/courses/'  + classCode + '/attendees');
-    }
+    } 
   }, [activeTab])
   const toggle_dropdown = () => setDropdownOpen(prevState => !prevState);
   useEffect(() => {
@@ -188,8 +192,12 @@ const Course = () => {
               <div className="row justify-content-between mt-3">
                 <div className="Classroom_Body m-0 p-0">
                   {
-                    activeTab === "content" ? 
-                    <Content adminEmail={adminEmail} classCode={classCode} /> : 
+                    activeTab === "content" ? (
+                    <Contents setIsContentCreated={setIsContentCreated} 
+                    isContentCreated={isContentCreated} 
+                    classCode={classCode} 
+                    adminEmail={adminEmail}
+                    /> ):
                     activeTab === "assignments" ? (
                     <Assignments 
                       setIsAssignmentCreated={setIsAssignmentCreated} 
@@ -253,6 +261,7 @@ const Course = () => {
                       ) : null
                     }
                   </div>
+                  <div>
                   {
                     (adminName===storeData.userName) ? (
                       <div className="d-flex justify-content-center">
@@ -261,8 +270,23 @@ const Course = () => {
                           Create Assignment
                         </Button>
                       </div>
-                    ) :(<></>)
+                    ) :(<>
+                    </>)
+                    }
+                  </div>
+                  <div>
+                  {
+                    (adminName===storeData.userName) ? (
+                      <div className="d-flex justify-content-center">
+                        <Button outline color="primary" className="Button_Hover d-flex align-items-center py-2 px-3 fs-6" onClick={() => setShowContent(true)}>
+                          <AddRoundedIcon style={{fontSize: "28px", margin: "-2px 3px 0 0"}} />
+                          Add Course Content
+                        </Button>
+                      </div>
+                    ):(<></>)
                   }
+                  </div>
+                   
                 </div>
               </div>
             </div>
@@ -276,6 +300,13 @@ const Course = () => {
             isModalOpen={show} 
             toggleModal={toggle} 
             setShow={setShow}
+          />
+           <CreateContent 
+            setIsContentCreated={setIsContentCreated} 
+            classCode={classCode} 
+            isModalOpen={showContent} 
+            toggleModal={toggleContent} 
+            setShowContent={setShowContent}
           />
         </div>
       ): ( 

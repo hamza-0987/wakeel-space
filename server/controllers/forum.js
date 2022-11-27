@@ -26,8 +26,7 @@ exports.createDiscussion = (req, res, next) => {
 }
 
 exports.getDiscussions = (req, res, next) => {
-    const creatorEmail = req.body.creatorEmail;
-    forum.find({creatorEmail: creatorEmail})
+    forum.find()
         .then(discussions => {
             res.json(discussions);
         })

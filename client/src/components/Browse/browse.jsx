@@ -1,15 +1,12 @@
 
 import "./browse.css";
 import React, { useState } from "react";
-
+import Banner from './Banner';
+import ClassList from './ClassList';
 import landingVector from "../../assets/landing-vector.svg";
 import Header from '../partials/Header/Header';
-import { Link } from 'react-router-dom';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import CopyrightIcon from '@material-ui/icons/Copyright';
+import MobileHeader from '../partials/Header/MobileHeader';
+import FooterNav from '../partials/FooterNav/FooterNav';
 
 export default function App() {
 
@@ -40,17 +37,21 @@ export default function App() {
   };
 
   return (
+    <section id="hero">
+    <div className="dashboard">
 
-    <div className="App">
-      <Header />
-      <section id="hero">
+      <div className="d-none d-md-block">
+        <Header />
+        <Banner />
+      </div>
+      <div className="d-block d-md-none">
+        <MobileHeader />
+        <Banner />
+      </div>
         <div className="container pt-4">
           <div className="row">
             <div className="col-lg-6 pt-5 pt-lg-0 mb-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <div className="search-header">
-                <div className="search-text">Search:</div>
-                <input id="search-box" onChange={filterBySearch} />
-              </div>
+              <input id="search-box" placeholder="Search" onChange={filterBySearch} />
               <div id="item-list">
                 <ol>
                   {filteredList.map((item, index) => (
@@ -61,8 +62,8 @@ export default function App() {
             </div>
           </div>
         </div>
-      </section>
-      
+       
     </div>
+    </section>
   );
 }
