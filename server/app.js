@@ -12,12 +12,14 @@ const authRoutes = require('./routes/auth');
 const classroomRoutes = require('./routes/classroom');
 const courseRoutes = require('./routes/course');
 const resourceRoutes = require('./routes/resource');
+const forumRoutes = require('./routes/forum');
 
 
 app.use('/auth', authRoutes);
 app.use('/classes', classroomRoutes);
 app.use('/courses', courseRoutes);
 app.use('/resources', resourceRoutes);
+app.use('/forum', forumRoutes);
 
 // if ( process.env.NODE_ENV === "production" || 1) { 
 //     app.use(express.static(path.join(__dirname, "../client/build"))); 

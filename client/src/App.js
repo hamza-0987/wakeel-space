@@ -2,6 +2,7 @@ import {BrowserRouter as Router, Route,Switch, Redirect} from 'react-router-dom'
 import './App.css';
 import React, {useEffect} from 'react';
 import Home from './components/Home/Home';
+import Browse from './components/Browse/browse';
 import Courses from './components/Courses/Dashboard';
 import Courseroom from './components/Courses/Classroom';
 import CourseAssign from './components/Courses/Assignments'
@@ -37,6 +38,7 @@ const App = () => {
             ) : userData.token ? (
               <Switch>
                 <Route path='/' component={Home} exact/>
+                <Route path='/browse' component={Browse} exact/>
                 <Route path='/courses' component={Courses} exact/>
                 <Route path='/courses/:id' component={Courseroom} exact/>
                 <Route path='/courses/:id/:tab' component={Courseroom} exact/>

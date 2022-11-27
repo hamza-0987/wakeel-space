@@ -5,6 +5,7 @@ import FooterNav from '../partials/FooterNav/FooterNav';
 import "./Dashboard.css";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Banner from './Banner';
+import Discussion from "./Discussion"; 
 import FAQ from './FAQ';
 import Forum from './Discussion';
 import axios from 'axios';
@@ -13,6 +14,8 @@ import { selectUserData} from '../../reduxSlices/authSlice';
 
 
 const Dashboard = () => {
+  const [adminName, setAdminName] = useState();
+  const [adminEmail, setAdminEmail] = useState();
   const [owned, setOwned] = useState([]);
   const [enrolled, setEnrolled] = useState([]);
   const [loading,setLoading] = useState(false);
@@ -77,6 +80,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="d-block d-md-none">
+            <Discussion adminEmail={adminEmail} />
               <FooterNav/>
             </div>
           </div>

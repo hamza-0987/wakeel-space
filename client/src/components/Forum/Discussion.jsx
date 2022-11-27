@@ -12,7 +12,7 @@ import axios from 'axios';
 import db, { storage } from '../../firebase';
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-const Discussion = ({adminEmail}) => {
+const Discussion = () => {
     const [discussionInput, setDiscussionInput] = useState("");
     const [posts, setPosts] = useState([]);
     const [fileInput, setFileInput] = useState();
@@ -49,9 +49,9 @@ const Discussion = ({adminEmail}) => {
         setCreateLoading(true);
         if (fileInput) {
             const fileName = new Date().getTime() + "-" + fileInput.name;
-            const uploadTask = storage.ref(`discussion/${fileName}`).put(fileInput);
+            const uploadTask = storage.ref(`forum/${fileName}`).put(fileInput);
             uploadTask.on('state_changed', console.log, console.error, () => {
-                storage.ref('discussion').child(fileName).getDownloadURL()
+                storage.ref('forum').child(fileName).getDownloadURL()
                   .then(firebaseURL => {
                     return axios.post('http://localhost:5000/forum/createDiscussion', {
                         creatorEmail: userData.userEmail,
@@ -176,16 +176,7 @@ const Discussion = ({adminEmail}) => {
                                                     {post.creatorName[0]}
                                                 </Avatar>
                                             </div>
-                                            <div className="Post_Author d-flex flex-column justify-content-center mx-3">
-                                                <div className="Post_creatorName">{post.creatorName}</div>
-                                                {
-                                                    post.creatorEmail === adminEmail ? (
-                                                        <div className="Post_AdminName">
-                                                            Admin
-                                                        </div>
-                                                    ) : null
-                                                }
-                                            </div>
+
                                             <div className="d-flex flex-column align-items-end">
                                                 <div className="Post_UploadDate">
                                                     {getDateStringFromTimestamp(post.createdAt)}
