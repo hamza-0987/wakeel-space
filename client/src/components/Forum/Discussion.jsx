@@ -12,6 +12,7 @@ import axios from 'axios';
 import db, { storage } from '../../firebase';
 import CircularProgress from "@material-ui/core/CircularProgress";
 
+
 const Discussion = () => {
     const [discussionInput, setDiscussionInput] = useState("");
     const [posts, setPosts] = useState([]);

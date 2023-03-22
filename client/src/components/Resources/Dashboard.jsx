@@ -54,6 +54,20 @@ const Dashboard = () => {
       setLoading(false);
     }
   }, [storeData.token]);
+
+  const joinClassStyle ={
+      
+    fontSize: '1.2rem',
+    paddingRight: '0.5rem',
+    marginBottom: '-0.2rem',
+    boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.6)',
+    width: '250px',
+    maxWidth: '700px',
+    margin: '10px',
+    borderRadius: '5px',
+    border:'none'
+    
+  }
   return (
     <>
       {
@@ -97,12 +111,12 @@ const Dashboard = () => {
                       Upload
                     </button>
                   </DropdownItem>
-                  {/* <DropdownItem>
-                    <button className="join-create-btn" onClick={() => setShowJoin(true)}>
+                  <DropdownItem>
+                    <button className="join-create-btn" onClick={() => setShowJoin(true)} style={{joinClassStyle}}>
                       <AddIcon className="pe-1 mb-1"></AddIcon>
                       Join Class
                     </button>
-                  </DropdownItem> */}
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </div>

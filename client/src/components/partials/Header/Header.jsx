@@ -71,7 +71,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <>
-            <NavLink to="/" className="navbar-brand ms-5 fw-bold" href="#">Learner's Space</NavLink>
+            <NavLink to="/" className="navbar-brand ms-5 fw-bold" href="#">Wakeel's Space</NavLink>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" 
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
             aria-expanded="false" aria-label="Toggle navigation">

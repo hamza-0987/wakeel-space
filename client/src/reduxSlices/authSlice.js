@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import Swal from 'sweetalert2'
 
 const authSlice = createSlice({
     name: 'auth',
@@ -37,6 +38,24 @@ const authSlice = createSlice({
         },
 
         LOGOUT: (state, action) => {
+          Swal.fire({
+            title: 'Are you sure you want to log out?',
+            icon: 'warning',
+            
+            
+           
+            
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // Handle log out here
+              // For example: window.location.href = '/logout'
+              Swal.fire(
+                'Logged out!',
+                'You have been successfully logged out.',
+                'success'
+              )
+            }
+          })
             state.token = null;
             state.userId = null;
             state.userEmail = null;
@@ -45,6 +64,7 @@ const authSlice = createSlice({
             localStorage.removeItem("EdEasy__userId");
             localStorage.removeItem("EdEasy__userName");
             localStorage.removeItem("EdEasy__userEmail");
+           
         }
     }
 })

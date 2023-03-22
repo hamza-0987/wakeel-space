@@ -73,13 +73,15 @@ const CreateContent = (props) => {
   const [fileInput, setFileInput] = useState(null);
   const [pdfFileError, setPdfFileError] = useState("");
   const [error, setError] = useState(false);
-
+  
   const userData = useSelector(selectUserData);
 
   const submitFile = (e) => {
     e.preventDefault();
 
     if (!fileInput) return;
+
+    
 
     setLoading(true);
     const fileName = new Date().getTime() + "-" + fileInput.fileInput.name;
@@ -177,7 +179,7 @@ const CreateContent = (props) => {
                   >
                     Create Content
                   </h1>
-                  <form onSubmit={submitFile}>
+                  <form onSubmit={submitFile}> Submit File
                     <FormControl
                       className={clsx(classes.margin, classes.textField)}
                     >

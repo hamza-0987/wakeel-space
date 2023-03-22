@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { Modal, ModalBody, TabContent, TabPane } from "reactstrap";
 import { withRouter, Redirect } from "react-router-dom";
+import Swal from 'sweetalert2';
 import "./LoginModal.css";
 import SingInImage from "../../../assets/signin.svg";
 import SingUpImage from "../../../assets/signup.svg";
@@ -134,12 +135,22 @@ const LoginModal = (props) => {
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
-    // console.log("Inside form submit");
+    
+
     let flag = 0;
+
+    
 
     if (!validateEmail(values.email)) {
       setEmailError(true);
       flag = 1;
+
+      Swal.fire({
+        title: 'Warning!',
+        text: 'Email is not valid.',
+        icon: 'warning',
+        confirmButtonText: 'OK'
+      });
     } else {
       setEmailError(false);
     }
@@ -147,6 +158,12 @@ const LoginModal = (props) => {
     if (!validatePassword(values.password)) {
       setPasswordError(true);
       flag = 1;
+      Swal.fire({
+        title: 'Warning!',
+        text: 'Password is not valid.',
+        icon: 'warning',
+        confirmButtonText: 'OK'
+      });
     } else {
       setPasswordError(false);
     }
@@ -154,6 +171,13 @@ const LoginModal = (props) => {
     if (activeTab === "2" && values.contact.length !== 10) {
       setContactError(true);
       flag = 1;
+
+      Swal.fire({
+        title: 'Warning!',
+        text: 'Contact values cannot be less than 10 numbers.',
+        icon: 'warning',
+        confirmButtonText: 'OK'
+      });
     } else {
       setContactError(false);
     }
@@ -167,6 +191,13 @@ const LoginModal = (props) => {
           password: values.password,
           logging: true,
         }));
+
+        Swal.fire({
+          title: 'Success!',
+          text: 'You have successfully logged in.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        });
     } else {
       dispatch(
         ASYNC_SIGNUP({
@@ -257,8 +288,10 @@ const LoginModal = (props) => {
                         }
                       />
                       {emailError ? (
+                        
                         <FormHelperText>Enter a valid Email ID</FormHelperText>
                       ) : null}
+                      
                     </FormControl>
                     <FormControl
                       error={passwordError}

@@ -1,18 +1,27 @@
-import firebase from 'firebase';
+
+import firebase from 'firebase/app';
+import 'firebase/storage';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDV7zPRR4m5uqIkLQOuPfZswqRfxFFTvrM",
-    authDomain: "learnerspace-1eac8.firebaseapp.com",
-    projectId: "learnerspace-1eac8",
-    storageBucket: "learnerspace-1eac8.appspot.com",
-    messagingSenderId: "352733195928",
-    appId: "1:352733195928:web:aea7469615784e49672aed"
+  apiKey: "AIzaSyCg0rUdvw_73_4-gEIlCbij4hipK8YPL0k",
+  authDomain: "learner-50919.firebaseapp.com",
+  projectId: "learner-50919",
+  storageBucket: "learner-50919.appspot.com",
+  messagingSenderId: "613927976869",
+  appId: "1:613927976869:web:3317fd57f351c80698724c",
+  measurementId: "G-51S0GTH0JK"
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-const db = firebaseApp.firestore();
-export const auth = firebase.auth();
+// Export Firebase Storage
 export const storage = firebase.storage();
 
-export default db;
+
+  
+  
+  
+
+  
+ 

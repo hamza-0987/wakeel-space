@@ -43,6 +43,20 @@ const Assignments = ({classCode, adminEmail, isAssignmentCreated, setIsAssignmen
         setIsAssignmentCreated(false);
     }, [isAssignmentCreated]);
 
+    const createAssignmentStyle ={
+      
+        fontSize: '1.2rem',
+        paddingRight: '0.5rem',
+        marginBottom: '-0.2rem',
+        boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.6)',
+        width: '50px',
+        maxWidth: '700px',
+        margin: '10px',
+        borderRadius: '5px',
+        border:'none'
+        
+      }
+
     return (
         <div className="Assignments content-box py-3 px-4 pt-4">
             {
@@ -97,7 +111,7 @@ const Assignments = ({classCode, adminEmail, isAssignmentCreated, setIsAssignmen
                                 </Fab>
                             </DropdownToggle>
                             <DropdownMenu className="bg-transparent" style={{border:"none"}}>
-                            <button className="join-create-btn" onClick={() => setShowCreate(true)}>
+                            <button className="join-create-btn" onClick={() => setShowCreate(true)} style={createAssignmentStyle}>
                                 Create Assignment
                             </button>
                             </DropdownMenu>

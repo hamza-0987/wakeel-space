@@ -10,7 +10,7 @@ const Banner = () => {
         <div className="row banner m-0">
             <div className="col-6 d-flex justify-content-center flex-column ps-5">
               <div className="hello-name d-none d-md-block">
-                Browse Learner's Space
+                Browse Wakeel's Space
               </div>
               <p className="hello-description d-none d-md-block">
                 Learn anytime, anywhere. Boost your skills flexible, online courses

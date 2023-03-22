@@ -22,13 +22,24 @@ const SideDash = (props) => {
     // Trigger render with updated values
     setFilteredList(updatedList);
   };
+
+  const inputStyle = {
+    padding: '10px',
+    fontSize: '16px',
+    borderRadius: '5px',
+    border:'none',
+    boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.6)',
+    width: '250px',
+    maxWidth: '700px',
+    margin: '10px'
+  }
   return (
     <div className="col-3 d-none d-md-block Dashboard_Sidedrawer px-1 ps-4 width-20">
     <div className="row">
     <div className="col-lg-6 pt-5 pt-lg-0 mb-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
       <div className="search-header">
         <div className="search-text">Search:</div>
-        <input id="search-box" onChange={filterBySearch} />
+        <input id="search-box" onChange={filterBySearch} style={inputStyle} />
       </div>
       <div id="item-list">
         <ol>

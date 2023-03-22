@@ -33,7 +33,7 @@ section {
 }
 
 h1{
-  font-family: Tajawal;
+  font-family: Monto;
   font-style: normal;
   font-weight: bold;
   font-size: 36px;
@@ -55,6 +55,28 @@ h1{
   background: #1b559c;
 }
 
+#hero .btn-get-started:hover {
+  background: #2d78d8;
+}
+
+@keyframes button-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#hero .btn-get-started:focus {
+  outline: none;
+  animation: button-pulse 0.5s ease-in-out;
+}
+
+
 a {
   color: #009cea;
   text-decoration: none;
@@ -73,19 +95,8 @@ a {
   border-right: 1px solid black;
 }
 
-.FloatImg {
-  animation: updown 6s ease-out  forwards; 
-  animation-iteration-count: infinite ;
-}
 
-@keyframes updown {
-  0% {
-    transform: translateY(-5%);
-  }
-  50% {
-    transform: translateY(5%);
-  }
-  100% {
-    transform: translateY(-5%);
-  }
-}
+
+
+
+

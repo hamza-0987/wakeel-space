@@ -59,3 +59,4 @@ mongoose.connect('mongodb+srv://admin:987654321@cluster0.edmu2.mongodb.net/myFir
 
 // https://localhost:5000/auth/login -> post
 // https://localhost:5000/auth/signup -> put
+// mongodb+srv://admin:987654321@cluster0.edmu2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority

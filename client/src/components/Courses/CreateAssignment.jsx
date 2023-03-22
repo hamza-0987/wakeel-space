@@ -19,6 +19,19 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { selectUserData } from "../../reduxSlices/authSlice";
 
+const createAssignmentStyle ={
+      
+  fontSize: '1.2rem',
+  paddingRight: '0.5rem',
+  marginBottom: '-0.2rem',
+  boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.6)',
+  width: '50px',
+  maxWidth: '700px',
+  margin: '10px',
+  borderRadius: '5px',
+  border:'none'
+  
+}
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -172,7 +185,7 @@ const CreateAssignment = (props) => {
               <div className="row justify-content-sm-center">
                 <div className="col-12 pb-0">
                   <h1
-                    style={{ color: "rgb(90,90,90)" }}
+                    style={{  createAssignmentStyle }}
                     className="text-center pt-3 mb-4 fs-2"
                   >
                     Create Assignment
@@ -181,7 +194,7 @@ const CreateAssignment = (props) => {
                     <FormControl
                       className={clsx(classes.margin, classes.textField)}
                     >
-                      <InputLabel htmlFor="name"></InputLabel>
+                      <InputLabel htmlFor="name">Assignment Name</InputLabel>
                       <Input
                         placeholder="Type Assignment name"
                         fullWidth
@@ -202,7 +215,7 @@ const CreateAssignment = (props) => {
                     <FormControl
                       className={clsx(classes.margin, classes.textField)}
                     >
-                      <InputLabel htmlFor="description"></InputLabel>
+                      <InputLabel htmlFor="description">Description</InputLabel>
                       <Input
                         style={{
                           outline: "none",
